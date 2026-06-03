@@ -1,0 +1,60 @@
+name: Deploy Backend to Lambda
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "server/**"
+      - ".github/workflows/deploy-backend.yml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: server
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+
+      - name: Install production dependencies
+        run: npm ci --omit=dev
+
+      - name: Create Lambda deployment zip
+        run: |
+          zip -r weightshop-api.zip . \
+            -x ".env" \
+            -x "*.zip" \
+            -x "node_modules/.cache/*"
+
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Update Lambda function code
+        run: |
+          aws lambda update-function-code \
+            --function-name ${{ vars.LAMBDA_FUNCTION_NAME }} \
+            --zip-file fileb://weightshop-api.zip
+
+      - name: Wait for Lambda update
+        run: |
+          aws lambda wait function-updated \
+            --function-name ${{ vars.LAMBDA_FUNCTION_NAME }}
