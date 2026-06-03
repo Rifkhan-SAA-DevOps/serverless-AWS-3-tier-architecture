@@ -23,7 +23,7 @@ function normalizeProduct(item) {
     image_url: item.image_url,
     category_id: item.categoryId,
     categoryId: item.categoryId,
-    category_name: item.categoryName,
+    categoryName: item.categoryName,
     is_active: item.isActive ? 1 : 0,
     created_at: item.createdAt,
     updated_at: item.updatedAt,

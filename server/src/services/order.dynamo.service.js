@@ -20,7 +20,7 @@ function normalizeOrder(item) {
     phone: item.phone,
     status: item.status,
     items: item.items || [],
-    customer_name: item.customerName,
+    customerName: item.customerName,
     customer_email: item.customerEmail,
     created_at: item.createdAt,
     updated_at: item.updatedAt,

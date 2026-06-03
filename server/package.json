@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "seed": "node src/seed/seed.js",
+  "seed:products": "node src/seed/products.seed.js"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1060.0",
