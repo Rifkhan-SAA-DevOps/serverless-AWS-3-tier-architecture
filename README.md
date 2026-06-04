@@ -14,12 +14,6 @@ This project demonstrates how a traditional full-stack application can be modern
 
 ---
 
-## Project Showcase
-
-![ServerlessShop Project Showcase](./docs/images/serverlessshop-project-showcase.png)
-
----
-
 ## Project Summary
 
 **ServerlessShop** is a full-stack e-commerce platform that supports customer shopping flows and admin management features. The backend was modernized from a MySQL-style application into a serverless AWS backend using **Lambda + API Gateway + DynamoDB**.
@@ -41,7 +35,7 @@ The project includes:
 
 ## Architecture Diagram
 
-![ServerlessShop AWS Serverless Architecture](./docs/images/serverlessshop-architecture.png)
+![ServerlessShop AWS Serverless Architecture](./docs/Diagram/Diagram.png)
 
 ### High-Level Architecture Flow
 
@@ -97,8 +91,6 @@ CloudFront HTTPS Distribution
 ---
 
 ## CI/CD Pipeline
-
-![ServerlessShop GitHub Actions CI/CD Pipeline](./docs/images/serverlessshop-cicd-pipeline.png)
 
 ```mermaid
 flowchart TD
@@ -444,89 +436,113 @@ This keeps deployments efficient because frontend-only changes do not redeploy t
 
 ## Screenshots 
 
-### Live Application
+### Login & Register Pages
 
-![Live Application](./docs/images/live-application.png)
+![Live Application](./docs/images/serverless-loginpage.png)
+![Live Application](./docs/images/serverless-registerpage.png)
 
 ### Home Page
 
-![Home Page](./docs/images/home-page.png)
+![Home Page](./docs/images/serverless-frontpage.png)
 
-### Products Page
+### Products Page & Admin Dashboard
 
-![Products Page](./docs/images/products-page.png)
+![Products Page](./docs/images/serverless-products-page.png)
 
 ### Product Details Page
 
-![Product Details Page](./docs/images/product-details-page.png)
+![Product Details Page](./docs/images/serverless-frontpage-view-page.png)
 
 ### Cart Page
 
-![Cart Page](./docs/images/cart-page.png)
+![Cart Page](./docs/images/serverless-frontpage-cart-page.png)
 
 ### Checkout / Order Page
 
-![Checkout Order Page](./docs/images/checkout-order-page.png)
-
-### Admin Dashboard
-
-![Admin Dashboard](./docs/images/admin-dashboard.png)
-
-### Admin Product Management
-
-![Admin Product Management](./docs/images/admin-product-management.png)
+![Checkout Order Page](./docs/images/serverless-order-page.png)
 
 ### Route 53 Domain
 
-![Route 53 Domain](./docs/images/route53-domain.png)
+![Route 53 Domain](./docs/images/route53.png)
 
 ### ACM Certificate
 
-![ACM Certificate](./docs/images/acm-certificate.png)
+![ACM Certificate](./docs/images/serverless-acm.png)
 
 ### CloudFront Distribution
 
-![CloudFront Distribution](./docs/images/cloudfront-distribution.png)
+![CloudFront Distributions](./docs/images/cloudfront-3.png)
+![Serverless CloudFront Distribution](./docs/images/cloudfront-1.png)
 
-### CloudFront Behaviors
+### CloudFront Error Page
 
-![CloudFront Behaviors](./docs/images/cloudfront-behaviors.png)
+![CloudFront Error Page](./docs/images/cloudfront-error-pages.png)
+
+### CloudFront Origins
+
+![Cloudfront Origins](./docs/images/cloudfront-apigateway-origin.png)
+
+### CloudFront Invalidation
+
+![CloudFront Invalidation Details](./docs/images/cloudfront-invalidation.png)
+
+### CloudFront Invalidations
+
+![CloudFront Invalidations](./docs/images/cloudfront-invalidations.png)
 
 ### S3 Private Bucket
 
-![S3 Private Bucket](./docs/images/s3-private-bucket.png)
+![S3 Private Bucket](./docs/images/s3.png)
+![S3 Cloudfront Permission](./docs/images/s3-clodufront-permission.png)
 
 ### API Gateway HTTP API
 
-![API Gateway HTTP API](./docs/images/api-gateway-http-api.png)
+![Cloudfront Origins](./docs/images/serverless-apigateway.png)
 
 ### Lambda Function
 
-![Lambda Function](./docs/images/lambda-function.png)
+![Lambda Function](./docs/images/serverless-lambda.png)
+![Lambda Configuration](./docs/images/serverless-lambda-config.png)
+![Lambda Permission Role](./docs/images/serverless-lambda-permission-role.png)
 
 ### DynamoDB Table
 
-![DynamoDB Table](./docs/images/dynamodb-table.png)
+![DynamoDB Table](./docs/images/dynamodb-1.png)
+![DynamoDB Indexes](./docs/images/dynamodb-2.png)
 
 ### DynamoDB Items
 
-![DynamoDB Items](./docs/images/dynamodb-items.png)
+![DynamoDB Items](./docs/images/serverless-dynamodb-datas.png)
 
 ### SSM Parameter Store
 
-![SSM Parameter Store](./docs/images/ssm-parameter-store.png)
+![SSM Parameter Store](./docs/images/serverless-acm.png)
 
 ### IAM Lambda Role
 
-![IAM Lambda Role](./docs/images/iam-lambda-role.png)
+![IAM Lambda Role](./docs/images/serverless-lambda-permission-role.png)
+![IAM Execution role Permission](./docs/images/serverless-lambda-roles.png)
+![IAM Lambda Permission For Dynamodb & SSM](./docs/images/serverless-lambda-ssm-permission.png)
 
-### GitHub Actions Frontend Success
+### IAM Github Role
 
-![GitHub Actions Frontend Success](./docs/images/github-actions-frontend-success.png)
+![IAM Github Role & Permissions](./docs/images/serverless-GitHubActionsDeployRole-permissions.png)
+
+### IAM Identity Provider
+
+![IAM OIDC](./docs/images/serverless-oidc.png)
+
+### GitHub CI/CD Actions Frontend Success
+
+![GitHub Actions Frontend Success](./docs/images/serverless-frontend-cicd.png)
+![GitHub Actions Frontend Success](./docs/images/serverless-frontend-cicd-1.png)
+![GitHub Actions Frontend Success](./docs/images/serverless-frontend-cicd-2.png)
 
 ### GitHub Actions Backend Success
 
-![GitHub Actions Backend Success](./docs/images/github-actions-backend-success.png)
+![GitHub Actions Backend Success](./docs/images/serverless-backend-cicd.png)
+![GitHub Actions Backend Success](./docs/images/serverless-backend-cicd-1.png)
+![GitHub Actions Backend Success](./docs/images/serverless-backend-cicd-2.png)
 
 ---
 
@@ -622,5 +638,5 @@ GitHub Actions deploys through OIDC without static AWS keys.
 **Mohammed Rifkhan**
 
 AWS Certified Solutions Architect Associate  
-Fullstack Developer | Cloud & DevOps Learner
+Fullstack Developer | Cloud & DevOps 
 
